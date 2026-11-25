@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | UNEST MARKET</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .details-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #0284C7;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .details-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            background: white;
+            border: 1px solid #CBD5E1;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .details-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            background: #E0F2FE;
+            border-radius: 10px;
+        }
+
+        .details-info h1 {
+            color: #075985;
+            margin: 12px 0;
+        }
+
+        .details-price {
+            color: #075985;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 18px 0;
+        }
+
+        .details-info p {
+            color: #475569;
+            margin: 12px 0;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            background: #0284C7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background: #0369A1;
+        }
+
+        @media (max-width: 650px) {
+            .details-card {
+                grid-template-columns: 1fr;
+            }
+
+            .details-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="details-container">
+
+        <a href="marketplace.html" class="back-link">
+            Back to Marketplace
+        </a>
+
+        <div id="productDetails">
+            Loading product...
+        </div>
+
+        <button
+            id="buyButton"
+            class="buy-button"
+            type="button"
+        >
+            Buy Now
+        </button>
+
+    </main>
+
+    <script type="module" src="js/product-details.js"></script>
+
+    <script>
+        document.getElementById("buyButton").addEventListener("click", function () {
+            const productId = new URLSearchParams(window.location.search).get("id");
+
+            if (!productId) {
+                alert("Product ID is missing.");
+                return;
+            }
+
+            window.location.href =
+                "checkout.html?id=" + encodeURIComponent(productId);
+        });
+    </script>
+
+</body>
+</html>

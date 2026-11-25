@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Login | UNEST MARKET</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: #EAF5FC;
+            font-family: Arial, sans-serif;
+            color: #102A43;
+        }
+
+        .login-container {
+            max-width: 430px;
+            width: 90%;
+            margin: 75px auto;
+            padding: 35px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            text-align: center;
+            color: #0284C7;
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748B;
+            margin-bottom: 30px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #CBD5E1;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: 2px solid #0284C7;
+            border-color: #0284C7;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #0284C7;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover { background: #0369A1; }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #message {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .register-link a,
+        .home-link {
+            color: #0284C7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <div class="logo">UNEST MARKET</div>
+
+        <h1>Seller Login</h1>
+
+        <p class="subtitle">
+            Login to manage your store, products and orders.
+        </p>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                    required placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password"
+                    required placeholder="Enter your password">
+            </div>
+
+            <button type="submit" id="loginButton">
+                Login to Seller Dashboard
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+        <div class="register-link">
+            New seller?
+            <a href="register.html">Create Seller Account</a>
+        </div>
+
+        <a href="index.html" class="home-link">
+            Back to Homepage
+        </a>
+
+    </main>
+
+    <script type="module">
+        import { supabase } from "./js/supabase.js";
+
+        const form = document.getElementById("loginForm");
+        const message = document.getElementById("message");
+        const button = document.getElementById("loginButton");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            button.disabled = true;
+            button.textContent = "Logging in...";
+
+            try {
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const password =
+                    document.getElementById("password").value;
+
+                const { data, error } =
+                    await supabase.auth.signInWithPassword({
+                        email,
+                        password
+                    });
+
+                if (error) throw error;
+
+                const accountType =
+                    data.user.user_metadata?.account_type;
+
+                if (accountType !== "seller") {
+                    await supabase.auth.signOut();
+                    throw new Error(
+                        "This account is not registered as a seller."
+                    );
+                }
+
+                message.style.color = "green";
+                message.textContent = "Login successful!";
+
+                window.location.href = "seller.html";
+
+            } catch (error) {
+                message.style.color = "red";
+                message.textContent = error.message;
+            } finally {
+                button.disabled = false;
+                button.textContent = "Login to Seller Dashboard";
+            }
+        });
+    </script>
+
+</body>
+</html>

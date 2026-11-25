@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | UNEST MARKET</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .checkout-container {
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 25px;
+            background: white;
+            border: 1px solid #CBD5E1;
+            border-radius: 12px;
+        }
+
+        h1, h2 {
+            color: #075985;
+        }
+
+        .checkout-container label {
+            display: block;
+            margin: 15px 0 6px;
+            font-weight: 700;
+        }
+
+        .checkout-container input,
+        .checkout-container textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #CBD5E1;
+            border-radius: 7px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 90px;
+        }
+
+        .product-summary {
+            background: #F0F9FF;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .checkout-button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: #0284C7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #checkoutMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="checkout-container">
+
+        <a href="marketplace.html">← Back to Marketplace</a>
+
+        <h1>Checkout</h1>
+        <p>Complete your details to place your order.</p>
+
+        <div class="product-summary" id="productSummary">
+            Loading product information...
+        </div>
+
+        <form id="checkoutForm">
+
+            <label for="guestName">Full Name *</label>
+            <input type="text" id="guestName" required minlength="2">
+
+            <label for="guestPhone">Phone Number *</label>
+            <input type="tel" id="guestPhone" required minlength="7">
+
+            <label for="guestEmail">Email Address (Optional)</label>
+            <input type="email" id="guestEmail">
+
+            <label for="deliveryAddress">Delivery Address *</label>
+            <textarea id="deliveryAddress" required minlength="5"></textarea>
+
+            <label for="orderQuantity">Quantity *</label>
+            <input type="number" id="orderQuantity"
+                   min="1" max="100" value="1" required>
+
+            <button type="submit" class="checkout-button"
+                    id="placeOrderButton">
+                Place Order
+            </button>
+
+        </form>
+
+        <p id="checkoutMessage"></p>
+
+    </main>
+
+    <script type="module" src="js/checkout.js"></script>
+
+</body>
+</html>

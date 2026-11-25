@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marketplace | UNEST MARKET</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .marketplace-header {
+            background: #E0F2FE;
+            padding: 55px 20px;
+            text-align: center;
+        }
+
+        .marketplace-header h1 {
+            color: #075985;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .marketplace-header p {
+            color: #334155;
+        }
+
+        .marketplace-content {
+            padding: 40px 20px 70px;
+        }
+
+        .marketplace-search {
+            max-width: 650px;
+            margin: 0 auto 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .marketplace-search input {
+            flex: 1;
+            min-width: 0;
+            padding: 15px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .marketplace-search button {
+            background: #0EA5E9;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .marketplace-search button:hover {
+            background: #0284C7;
+        }
+
+        .filter-section {
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .filter-section label {
+            display: block;
+            color: #075985;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .filter-section select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #0EA5E9;
+            border-radius: 8px;
+            background: white;
+            color: #0F172A;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-section h2 {
+            color: #075985;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(7, 89, 133, 0.12);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            background: #E0F2FE;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-category {
+            color: #0284C7;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .product-info h3 {
+            color: #0F172A;
+            font-size: 19px;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            color: #075985;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .product-condition,
+        .product-location {
+            color: #475569;
+            font-size: 14px;
+            margin: 7px 0;
+        }
+
+        .product-info button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 15px;
+            background: #0EA5E9;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 7px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .product-info button:hover {
+            background: #0284C7;
+        }
+
+        @media (max-width: 850px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .marketplace-header h1 {
+                font-size: 27px;
+            }
+
+            .marketplace-search {
+                flex-direction: column;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="marketplace-header">
+        <h1>UNEST MARKETPLACE</h1>
+        <p>Discover products and great deals from fellow UNIBEN students.</p>
+    </header>
+
+    <main class="marketplace-content">
+
+        <form class="marketplace-search" id="marketplaceSearch">
+            <input
+                type="search"
+                id="marketplaceSearchInput"
+                placeholder="Search for products..."
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="filter-section">
+            <label for="categoryFilter">Filter by Category</label>
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Books & Study Materials">Books & Study Materials</option>
+                <option value="Home & Living">Home & Living</option>
+            </select>
+        </div>
+
+        <section class="products-section">
+            <h2 id="marketplaceMessage">Explore the Marketplace</h2>
+
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+
+    </main>
+
+    <script type="module" src="js/products.js"></script>
+
+</body>
+</html>

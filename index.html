@@ -1,0 +1,892 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UNEST | UNIBEN Student Marketplace</title>
+
+    <meta name="description" content="Buy and sell products within the University of Benin community.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            UNEST
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="marketplace.html">Marketplace</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About Us</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="sell-btn">Start Selling</a>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-label">
+                THE UNIBEN STUDENT MARKETPLACE
+            </span>
+
+            <h1>
+                Your Campus.
+                <span>Your Market.</span>
+                Your Community.
+            </h1>
+
+            <p>
+                Discover amazing products, support student businesses
+                and shop directly from fellow University of Benin students.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="marketplace.html" class="primary-btn">
+                    Explore Marketplace
+                    <span>→</span>
+                </a>
+
+                <a href="register.html" class="secondary-btn">
+                    Become a Seller
+                </a>
+
+            </div>
+
+            <div class="hero-info">
+                <span>Student Marketplace</span>
+                <span>Easy Shopping</span>
+                <span>Secure Transactions</span>
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="visual-card">
+
+                <div class="visual-top">
+                    <span>UNEST</span>
+                    <span class="status-dot"></span>
+                </div>
+
+                <div class="visual-content">
+                    <div class="visual-shape"></div>
+
+                    <h3>Everything You Need.</h3>
+
+                    <p>
+                        One marketplace. Endless possibilities.
+                    </p>
+                </div>
+
+                <div class="visual-bottom">
+                    <span>BUILT FOR UNIBEN</span>
+                    <span>2026</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+    <div class="container">
+
+        <form class="search-box" id="searchForm">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="What are you looking for?"
+            >
+
+            <button type="submit">
+                Search Products
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories section" id="categories">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-heading">EXPLORE PRODUCTS</span>
+                <h2>Shop by Category</h2>
+                <p>Find everything you need within your campus.</p>
+            </div>
+
+            <a href="marketplace.html" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <a href="marketplace.html?category=Electronics" class="category-card">
+                <div class="category-number">01</div>
+                <h3>Electronics</h3>
+                <p>Phones, laptops and gadgets</p>
+            </a>
+
+            <a href="marketplace.html?category=Fashion" class="category-card">
+                <div class="category-number">02</div>
+                <h3>Fashion</h3>
+                <p>Clothes, shoes and bags</p>
+            </a>
+
+            <a href="marketplace.html?category=Food" class="category-card">
+                <div class="category-number">03</div>
+                <h3>Food & Drinks</h3>
+                <p>Meals, snacks and beverages</p>
+            </a>
+
+            <a href="marketplace.html?category=Books" class="category-card">
+                <div class="category-number">04</div>
+                <h3>Books</h3>
+                <p>Textbooks and study materials</p>
+            </a>
+
+            <a href="marketplace.html?category=Beauty" class="category-card">
+                <div class="category-number">05</div>
+                <h3>Beauty</h3>
+                <p>Beauty and skincare products</p>
+            </a>
+
+            <a href="marketplace.html?category=Accessories" class="category-card">
+                <div class="category-number">06</div>
+                <h3>Accessories</h3>
+                <p>Watches and jewellery</p>
+            </a>
+
+            <a href="marketplace.html?category=Home" class="category-card">
+                <div class="category-number">07</div>
+                <h3>Home & Living</h3>
+                <p>Products for your room</p>
+            </a>
+
+            <a href="marketplace.html?category=Services" class="category-card">
+                <div class="category-number">08</div>
+                <h3>Student Services</h3>
+                <p>Skills and professional services</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+
+<section class="products-section section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-heading">DISCOVER WHAT'S NEW</span>
+                <h2>Featured Products</h2>
+                <p>Products available from student sellers.</p>
+            </div>
+
+            <a href="marketplace.html" class="view-all">
+                Explore All →
+            </a>
+
+        </div>
+
+
+        <div class="product-grid" id="featuredProducts">
+
+            <div class="empty-products">
+
+                <div class="empty-line"></div>
+
+                <h3>Products Coming Soon</h3>
+
+                <p>
+                    Be among the first students to list products
+                    on UNEST.
+                </p>
+
+                <a href="register.html" class="primary-btn">
+                    Start Selling
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="how-section section" id="about">
+
+    <div class="container">
+
+        <div class="section-heading center-heading">
+
+            <span class="small-heading">SIMPLE AND CONVENIENT</span>
+
+            <h2>How UNEST Works</h2>
+
+            <p>
+                Buying and selling within UNIBEN has never been easier.
+            </p>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+            <div class="step-card">
+
+                <span class="step-number">01</span>
+
+                <h3>Create an Account</h3>
+
+                <p>
+                    Register and become part of the UNIBEN
+                    student marketplace.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <span class="step-number">02</span>
+
+                <h3>Buy or Sell Products</h3>
+
+                <p>
+                    Discover products or upload your own
+                    items for other students.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <span class="step-number">03</span>
+
+                <h3>Complete Your Order</h3>
+
+                <p>
+                    Receive your product and confirm delivery
+                    to complete your transaction.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SELLER PROMOTION -->
+
+<section class="seller-section">
+
+    <div class="container seller-content">
+
+        <div>
+
+            <span>START YOUR STUDENT BUSINESS</span>
+
+            <h2>
+                Have Something to Sell?
+            </h2>
+
+            <p>
+                Join UNEST and showcase your products
+                to students across the University of Benin.
+            </p>
+
+            <a href="register.html" class="seller-cta-btn">
+                Start Selling Today →
+            </a>
+
+        </div>
+
+        <div class="seller-decoration">
+            UNEST
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+                UNEST
+            </a>
+
+            <p>
+                Connecting buyers and sellers within the
+                University of Benin community.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Marketplace</h3>
+
+            <a href="marketplace.html">Explore Products</a>
+            <a href="register.html">Start Selling</a>
+            <a href="#categories">Categories</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Company</h3>
+
+            <a href="#about">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="help.html">Help Centre</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Legal</h3>
+
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>© 2026 UNEST. All rights reserved.</p>
+
+        <p>Built for the UNIBEN community.</p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UNEST | UNIBEN Student Marketplace</title>
+
+    <meta name="description" content="Buy and sell products within the University of Benin community.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            UNEST
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="marketplace.html">Marketplace</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About Us</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="sell-btn">Start Selling</a>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-label">
+                THE UNIBEN STUDENT MARKETPLACE
+            </span>
+
+            <h1>
+                Your Campus.
+                <span>Your Market.</span>
+                Your Community.
+            </h1>
+
+            <p>
+                Discover amazing products, support student businesses
+                and shop directly from fellow University of Benin students.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="marketplace.html" class="primary-btn">
+                    Explore Marketplace
+                    <span>→</span>
+                </a>
+
+                <a href="register.html" class="secondary-btn">
+                    Become a Seller
+                </a>
+
+            </div>
+
+            <div class="hero-info">
+                <span>Student Marketplace</span>
+                <span>Easy Shopping</span>
+                <span>Secure Transactions</span>
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="visual-card">
+
+                <div class="visual-top">
+                    <span>UNEST</span>
+                    <span class="status-dot"></span>
+                </div>
+
+                <div class="visual-content">
+                    <div class="visual-shape"></div>
+
+                    <h3>Everything You Need.</h3>
+
+                    <p>
+                        One marketplace. Endless possibilities.
+                    </p>
+                </div>
+
+                <div class="visual-bottom">
+                    <span>BUILT FOR UNIBEN</span>
+                    <span>2026</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+    <div class="container">
+
+        <form class="search-box" id="searchForm">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="What are you looking for?"
+            >
+
+            <button type="submit">
+                Search Products
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories section" id="categories">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-heading">EXPLORE PRODUCTS</span>
+                <h2>Shop by Category</h2>
+                <p>Find everything you need within your campus.</p>
+            </div>
+
+            <a href="marketplace.html" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <a href="marketplace.html?category=Electronics" class="category-card">
+                <div class="category-number">01</div>
+                <h3>Electronics</h3>
+                <p>Phones, laptops and gadgets</p>
+            </a>
+
+            <a href="marketplace.html?category=Fashion" class="category-card">
+                <div class="category-number">02</div>
+                <h3>Fashion</h3>
+                <p>Clothes, shoes and bags</p>
+            </a>
+
+            <a href="marketplace.html?category=Food" class="category-card">
+                <div class="category-number">03</div>
+                <h3>Food & Drinks</h3>
+                <p>Meals, snacks and beverages</p>
+            </a>
+
+            <a href="marketplace.html?category=Books" class="category-card">
+                <div class="category-number">04</div>
+                <h3>Books</h3>
+                <p>Textbooks and study materials</p>
+            </a>
+
+            <a href="marketplace.html?category=Beauty" class="category-card">
+                <div class="category-number">05</div>
+                <h3>Beauty</h3>
+                <p>Beauty and skincare products</p>
+            </a>
+
+            <a href="marketplace.html?category=Accessories" class="category-card">
+                <div class="category-number">06</div>
+                <h3>Accessories</h3>
+                <p>Watches and jewellery</p>
+            </a>
+
+            <a href="marketplace.html?category=Home" class="category-card">
+                <div class="category-number">07</div>
+                <h3>Home & Living</h3>
+                <p>Products for your room</p>
+            </a>
+
+            <a href="marketplace.html?category=Services" class="category-card">
+                <div class="category-number">08</div>
+                <h3>Student Services</h3>
+                <p>Skills and professional services</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+
+<section class="products-section section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-heading">DISCOVER WHAT'S NEW</span>
+                <h2>Featured Products</h2>
+                <p>Products available from student sellers.</p>
+            </div>
+
+            <a href="marketplace.html" class="view-all">
+                Explore All →
+            </a>
+
+        </div>
+
+
+        <div class="product-grid" id="featuredProducts">
+
+            <div class="empty-products">
+
+                <div class="empty-line"></div>
+
+                <h3>Products Coming Soon</h3>
+
+                <p>
+                    Be among the first students to list products
+                    on UNEST.
+                </p>
+
+                <a href="register.html" class="primary-btn">
+                    Start Selling
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="how-section section" id="about">
+
+    <div class="container">
+
+        <div class="section-heading center-heading">
+
+            <span class="small-heading">SIMPLE AND CONVENIENT</span>
+
+            <h2>How UNEST Works</h2>
+
+            <p>
+                Buying and selling within UNIBEN has never been easier.
+            </p>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+            <div class="step-card">
+
+                <span class="step-number">01</span>
+
+                <h3>Create an Account</h3>
+
+                <p>
+                    Register and become part of the UNIBEN
+                    student marketplace.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <span class="step-number">02</span>
+
+                <h3>Buy or Sell Products</h3>
+
+                <p>
+                    Discover products or upload your own
+                    items for other students.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <span class="step-number">03</span>
+
+                <h3>Complete Your Order</h3>
+
+                <p>
+                    Receive your product and confirm delivery
+                    to complete your transaction.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SELLER PROMOTION -->
+
+<section class="seller-section">
+
+    <div class="container seller-content">
+
+        <div>
+
+            <span>START YOUR STUDENT BUSINESS</span>
+
+            <h2>
+                Have Something to Sell?
+            </h2>
+
+            <p>
+                Join UNEST and showcase your products
+                to students across the University of Benin.
+            </p>
+
+            <a href="register.html" class="seller-cta-btn">
+                Start Selling Today →
+            </a>
+
+        </div>
+
+        <div class="seller-decoration">
+            UNEST
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+                UNEST
+            </a>
+
+            <p>
+                Connecting buyers and sellers within the
+                University of Benin community.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Marketplace</h3>
+
+            <a href="marketplace.html">Explore Products</a>
+            <a href="register.html">Start Selling</a>
+            <a href="#categories">Categories</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Company</h3>
+
+            <a href="#about">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="help.html">Help Centre</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Legal</h3>
+
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>© 2026 UNEST. All rights reserved.</p>
+
+        <p>Built for the UNIBEN community.</p>
+
+    </div>
+
+</footer>
+
+
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

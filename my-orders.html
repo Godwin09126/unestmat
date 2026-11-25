@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | UNEST MARKET</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { background:#EAF5FC; font-family:Arial,sans-serif; color:#102A43; }
+        .container { max-width:1000px; margin:40px auto; padding:20px; }
+        .header { background:white; padding:22px; border-radius:10px; }
+        h1 { color:#0284C7; }
+        .back { color:#0284C7; text-decoration:none; font-weight:bold; }
+        .orders { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:25px; }
+        .order-card { background:white; border:1px solid #CBD5E1; border-radius:10px; padding:20px; }
+        .order-card h3 { color:#075985; }
+        .price { color:#0284C7; font-size:20px; font-weight:bold; }
+        .status { background:#E0F2FE; padding:8px 12px; border-radius:5px; display:inline-block; }
+        button { width:100%; padding:12px; margin-top:15px; border:0; border-radius:6px; background:#0284C7; color:white; font-weight:bold; cursor:pointer; }
+        button:disabled { opacity:.6; }
+    </style>
+</head>
+<body>
+<main class="container">
+    <header class="header">
+        <h1>My Orders</h1>
+        <a href="buyer.html" class="back">Back to Dashboard</a>
+    </header>
+
+    <p id="ordersMessage">Loading your orders...</p>
+    <div class="orders" id="ordersContainer"></div>
+</main>
+
+<script type="module" src="js/my-orders.js"></script>
+</body>
+</html>

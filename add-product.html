@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product | UNEST MARKET</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        body {
+            background: #F1F7FC;
+            font-family: Arial, sans-serif;
+            color: #102A43;
+        }
+
+        .form-container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #0284C7;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #0284C7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0369A1;
+        }
+
+        .back-link {
+            color: #0284C7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="form-container">
+
+        <a href="seller.html" class="back-link">
+            Back to Dashboard
+        </a>
+
+        <h1>Add New Product</h1>
+        <p>Enter the details of the product you want to sell.</p>
+
+        <form id="productForm">
+
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productPrice">Price (₦)</label>
+                <input type="number" id="productPrice" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productCategory">Category</label>
+                <select id="productCategory" required>
+                    <option value="">Select Category</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Books & Study Materials">Books & Study Materials</option>
+                    <option value="Home & Living">Home & Living</option>
+                    <option value="Food">Food</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="productCondition">Product Condition</label>
+                <select id="productCondition" required>
+                    <option value="">Select Condition</option>
+                    <option value="New">New</option>
+                    <option value="Used">Used</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="productLocation">Location</label>
+                <input type="text" id="productLocation"
+                    placeholder="e.g. UNIBEN, Ugbowo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productDescription">Product Description</label>
+                <textarea id="productDescription"
+                    placeholder="Describe your product..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="productImage">Product Image</label>
+                <input type="file" id="productImage"
+                    accept="image/*" required>
+            </div>
+
+            <button type="submit">Submit Product</button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </main>
+<script type="module" src="js/add-product.js"></script>
+</body>
+</html>

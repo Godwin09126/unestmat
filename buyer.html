@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard | UNEST MARKET</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #F1F7FC;
+            color: #102A43;
+            font-family: Arial, sans-serif;
+        }
+
+        .dashboard {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            background: #0284C7;
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .dashboard-header h1 {
+            margin-top: 0;
+            font-size: 30px;
+        }
+
+        .dashboard-header p {
+            font-size: 16px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #DCEAF5;
+        }
+
+        .dashboard-card h2 {
+            margin-top: 0;
+            color: #075985;
+        }
+
+        .dashboard-card p {
+            color: #526579;
+            line-height: 1.7;
+        }
+
+        .dashboard-button {
+            display: inline-block;
+            background: #0284C7;
+            color: white;
+            padding: 13px 22px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .dashboard-button:hover {
+            background: #0369A1;
+        }
+
+        .logout-button {
+            background: #DC2626;
+        }
+
+        .logout-button:hover {
+            background: #B91C1C;
+        }
+
+        #message {
+            margin-top: 12px;
+        }
+
+        @media (max-width: 650px) {
+            .dashboard {
+                margin: 15px auto;
+                padding: 15px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="dashboard">
+
+    <section class="dashboard-header">
+        <h1>Buyer Dashboard</h1>
+        <p id="welcomeMessage">Welcome to UNEST MARKET.</p>
+    </section>
+
+    <div class="dashboard-grid">
+
+        <section class="dashboard-card">
+            <h2>Explore Products</h2>
+            <p>Discover products listed by other UNIBEN students.</p>
+            <a href="marketplace.html" class="dashboard-button">
+                Browse Marketplace
+            </a>
+        </section>
+
+        <section class="dashboard-card">
+            <h2>My Orders</h2>
+            <p>View your purchases and track order updates.</p>
+            <a href="my-orders.html" class="dashboard-button">
+                View My Orders
+            </a>
+        </section>
+
+        <section class="dashboard-card">
+            <h2>My Account</h2>
+            <p>Manage your UNEST MARKET account.</p>
+            <button id="logoutButton" class="dashboard-button logout-button">
+                Log Out
+            </button>
+            <p id="message"></p>
+        </section>
+
+    </div>
+
+</main>
+
+<script type="module">
+import { supabase } from "./js/supabase.js";
+
+const { data: { user }, error } = await supabase.auth.getUser();
+
+if (error || !user) {
+    window.location.href = "login.html";
+} else {
+    document.getElementById("welcomeMessage").textContent =
+        `Welcome, ${user.user_metadata.full_name || user.email}.`;
+}
+
+document.getElementById("logoutButton").addEventListener("click", async () => {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+        document.getElementById("message").textContent = error.message;
+        return;
+    }
+
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>
